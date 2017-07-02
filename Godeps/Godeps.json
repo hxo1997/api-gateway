@@ -1,0 +1,9 @@
+{
+	"ImportPath": "github.com/kubus-iot/api-gateway",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": []
+}
