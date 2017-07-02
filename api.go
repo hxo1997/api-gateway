@@ -9,11 +9,14 @@ import (
 
 type someThing struct {
 	fName string
+	fAge  int
 }
 
 func (p *someThing) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, p.fName)
 	log.Println(r.Method)
+	SomeFunc(w, r)
+
 }
 func main() {
 	port := os.Getenv("PORT")
@@ -21,10 +24,9 @@ func main() {
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
-	someOne := &someThing{"test123213"}
-
+	//someOne := &someThing{"test123213", 30}
 	http.HandleFunc("/", notFound)
-	http.HandleFunc("/api", someOne.ServeHTTP)
+	http.HandleFunc("/api", testAPI)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 func notFound(w http.ResponseWriter, r *http.Request) {
