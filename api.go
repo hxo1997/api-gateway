@@ -34,13 +34,5 @@ func notFound(w http.ResponseWriter, r *http.Request) {
 	log.Println(r.Method + " - " + r.URL.Path)
 }
 func testAPI(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "GET" {
-		fmt.Fprintln(w, r.Method)
-	}
-	if r.Method == "POST" {
-		fmt.Fprintln(w, r.Method)
-	}
-	if r.Method == "PUT" {
-		fmt.Fprintln(w, r.Method)
-	}
+	fmt.Fprintln(w, r.Method)
 }
