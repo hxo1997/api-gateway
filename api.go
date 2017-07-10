@@ -30,7 +30,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 func notFound(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Cai gi cung dc")
+	fmt.Fprintln(w, "Cai gi cung dc la cai gi abcddd")
 	log.Println(r.Method + " - " + r.URL.Path)
 }
 func testAPI(w http.ResponseWriter, r *http.Request) {
